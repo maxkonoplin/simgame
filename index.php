@@ -41,7 +41,7 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="eat-tab">
                         <h3>Еда</h3>
-                        <button class="btn-eat chance" data-satiety="40" data-duration="20000">Искать объедки</button>
+                        <button class="btn-eat chance" data-satiety="40" data-duration="20000" data-succes="Ярик нашел лакомство, на близжайщей помойке! Можно не думать о голоде, еще пару часов!">Искать объедки</button>
                         <button class="btn-eat" data-satiety="30" data-duration="10000" data-price="3" data-succes="Это не обед в столвой, это просто какая то амброзия!">Обед в столовой</button>
                         <button class="btn-eat" data-satiety="45" data-duration="12000" data-price="5" data-succes="Кебаб отличный, чувствую себя как король!">Заказать кебаб</button>
                         <button class="btn-eat" data-satiety="60" data-duration="15000" data-price="7" data-succes="Лучшее пиво на свете, сейчас бы еще в стрипульку!">Пиво с ништяками</button>
@@ -94,6 +94,15 @@
                     <p class="bg-primary">Ярик вышел из аеропорта и вздохнул свежий Канадский воздух. В кармане денег нет,
                     остановится негде, у него есть только четкое понимание того, что он сможет добиться успеха тут!</p>
                 </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                        <span class="sr-only">70% Complete</span>
+                    </div>
+                </div>
+                <button onclick="addLogs()" style="margin-top: 50px;">TEST BUTTON (I DON'T THINK WHAT MAKE AT THIS TIME)</button>
             </div>
         </div>
     </div>

@@ -2,3 +2,5 @@
 .idea/
 # macOS
 .DS_Store
+# arhive
+/arhive.zip
