@@ -73,6 +73,7 @@ setInterval(function() {
                     console.log("Ярик потерял созание! Проснулся сытым, голова раскалывается, а в кармане не хватает " + tempVar + "$!");
                     person.money = person.money - tempVar;
                     person.health = person.health - 5;
+                    moneySelector.html(person.money);
                 } else {
                     console.log("Ярик потерял созание! Проснулся сытым, голова раскалывается, анал слегка побаливает!");
                     person.health = person.health - 10;
@@ -97,19 +98,40 @@ setInterval(function() {
 // eat
 $(".btn-eat").on("click", function() {
     if ( $(this).hasClass("chance")) {
+        durationAnim($(this).data("duration"));
         randomNumber(1, 3);
         if ( tempVar == 3 ) {
-            console.log("Ярик нашел лакомство, на близжайщей помойке! Можно не думать о голоде, еще пару часов!")
-
+            console.log("Ярик нашел лакомство, на близжайщей помойке! Можно не думать о голоде, еще пару часов!");
+            tempVar = $(this).data("satiety");
+            if (person.hungry <= tempVar) {
+                console.log("Ярик наелся как свинюшка!");
+                person.hungry = 0;
+            } else {
+                console.log("Можно было бы полирнуть пивом :)");
+                person.hungry = person.hungry - tempVar;
+            }
+            hungrySelector.html(person.hungry);
         } else {
             console.log("Увы, бог милосердия не взглянул в сторону Ярика. Он остается голодным и злым!")
         }
     } else {
         tempVar = $(this).data("price");
         if ( person.money >= tempVar ) {
-            console.log("hvataet deneg");
+            person.money = person.money - tempVar;
+            moneySelector.html(person.money);
+            durationAnim($(this).data("duration"));
+            console.log($(this).data("succes"));
+            tempVar = $(this).data("satiety");
+            if (person.hungry <= tempVar) {
+                console.log("Ярик наелся как свинюшка!");
+                person.hungry = 0;
+            } else {
+                console.log("Можно было бы полирнуть пивом :)");
+                person.hungry = person.hungry - tempVar;
+            }
+            hungrySelector.html(person.hungry);
         } else {
-            console.log("nehvataet deneg");
+            console.log("Ярик грустно вывернув карманы, пошел дальше по улице обливаясь слюной!");
         }
     }
 });
@@ -123,5 +145,10 @@ function randomNumber(min, max) {
 
 // duration
 function durationAnim(dtime) {
+
+}
+
+// add logs
+function addLogs(text, color) {
 
 }

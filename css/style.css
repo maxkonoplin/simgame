@@ -1,0 +1,8 @@
+/* logs */
+#block-logs {
+    height: 350px;
+    overflow-y: auto;
+}
+#block-logs p {
+    padding: 5px 10px;
+}
