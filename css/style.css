@@ -6,3 +6,18 @@
 #block-logs p {
     padding: 5px 10px;
 }
+
+/* modal */
+#work-modal {
+    pointer-events: none !important;
+}
+
+/* audio */
+#audio{
+    width: 100%;
+}
+
+/* tooltip + btn */
+.tooltip+.btn-block {
+    margin-top: 5px;
+}
