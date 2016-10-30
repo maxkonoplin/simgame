@@ -12,6 +12,17 @@
     pointer-events: none !important;
 }
 
+/* tooltip */
+
+.tooltip-inner {
+    width: 200px;
+}
+
+/* tables */
+.tab-pane .table td:nth-child(2) {
+    text-align: right;
+}
+
 /* audio */
 #audio{
     width: 100%;

@@ -1,0 +1,10 @@
+{
+  "name": "trailer",
+  "price": 150,
+  "rent": null,
+  "comfort": 0.3,
+  "kitchen": true,
+  "electricity": true,
+  "internet": false,
+  "priority": 2
+}

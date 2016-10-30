@@ -4,3 +4,4 @@
 .DS_Store
 # arhive
 /arhive.zip
+node_modules/

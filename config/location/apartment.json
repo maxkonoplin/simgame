@@ -1,0 +1,10 @@
+{
+  "name": "apartment",
+  "price": 800,
+  "rent": 30,
+  "comfort": 0.5,
+  "kitchen": true,
+  "electricity": true,
+  "internet": true,
+  "priority": 4
+}

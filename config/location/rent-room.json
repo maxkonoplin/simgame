@@ -1,0 +1,10 @@
+{
+  "name": "rentRoom",
+  "price": 300,
+  "rent": 10,
+  "comfort": 0.4,
+  "kitchen": true,
+  "electricity": true,
+  "internet": false,
+  "priority": 3
+}

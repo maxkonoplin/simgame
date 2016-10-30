@@ -1,0 +1,10 @@
+{
+  "name": "villa",
+  "price": 10000,
+  "rent": 300,
+  "comfort": 1,
+  "kitchen": true,
+  "electricity": true,
+  "internet": true,
+  "priority": 6
+}

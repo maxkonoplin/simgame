@@ -1,0 +1,10 @@
+{
+  "name": "penthouse",
+  "price": 2500,
+  "rent": 90,
+  "comfort": 0.8,
+  "kitchen": true,
+  "electricity": true,
+  "internet": true,
+  "priority": 5
+}
