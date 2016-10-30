@@ -1,0 +1,11 @@
+{
+  "name": "Объедки",
+  "price": 0,
+  "satiety": 40,
+  "duration": 20000,
+  "quality": 0.3,
+  "replica": [
+    "Ura ia siel obiedki!",
+    "Moi liubimie s kotiatami!"
+  ]
+}

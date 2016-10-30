@@ -1,7 +1,8 @@
 # redactore
 .idea/
+
 # macOS
 .DS_Store
-# arhive
-/arhive.zip
+
+# node modules
 node_modules/

@@ -18,15 +18,5 @@
     "gulp-stylus": "*",
     "gulp-uglify": "*",
     "through2": "*"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://someone-unknown@bitbucket.org/maxkonoplin/simgame.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/maxkonoplin/simgame#readme"
+  }
 }
