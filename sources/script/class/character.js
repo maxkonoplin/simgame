@@ -63,8 +63,12 @@ export default class Character extends events.EventEmitter {
             return false;
         }
         if(food.kitchen == true) {
-            if(this.location == null && this.location.kitchen == false) {
-                this.emit('notEnoughKitchen');
+            if(this.location == null) {
+                this.emit('notEnoughLocationForFood');
+                return false;
+            }
+            if(this.location.kitchen == false) {
+                this.emit('notEnoughKitchenForFood');
                 return false;
             }
         }
