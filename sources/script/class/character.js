@@ -1,5 +1,6 @@
 import events from 'events';
 import Location from './location';
+import Food from './food';
 
 export default class Character extends events.EventEmitter {
     constructor(name = 'Ярик', age = 30){
@@ -13,7 +14,7 @@ export default class Character extends events.EventEmitter {
         this.hunger = 0;
         this.location = null;
         this.start = Date.now();
-        this.hungerPerTime = 0.015;
+        this.hungerPerTime = 0.01;
         setInterval(() => {
             if(this.hunger >= 0.6){
                 if(this.hunger >= 0.8){
@@ -51,8 +52,17 @@ export default class Character extends events.EventEmitter {
         }, 1000);
         return this;
     }
-    eat(food){
-
+    eatFood(food){
+        if(!(food instanceof Food)) {
+            console.log('not food');
+            return false;
+        }
+        if(this.cash < food.price) {
+            this.emit('notEnoughMoneyForFood');
+            return false;
+        }
+        this.cash -= food.price;
+        this.hunger += food.satiety;
     }
     applyWorkplace(workplace){
 
@@ -83,10 +93,10 @@ export default class Character extends events.EventEmitter {
     heal(health){
 
     }
-    createProgramm(){
+    createProgramm(IQ){
 
     }
-    createVirus(){
+    createVirus(IQ){
 
     }
     relax(){

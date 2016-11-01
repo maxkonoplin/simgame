@@ -1,0 +1,8 @@
+{
+  "name": "Стейк",
+  "price": 35,
+  "satiety": 80,
+  "duration": 10000,
+  "quality": 0.95,
+  "kitchen": false
+}

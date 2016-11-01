@@ -10,7 +10,6 @@ let nameSelector = $('#name'),
     timeSelector = $('#time');
 
 
-
 export default function renderPage(character) {
     let range = new Date();
     range.setTime((Date.now() - character.start) * 3600);

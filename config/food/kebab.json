@@ -1,0 +1,8 @@
+{
+  "name": "Домашняя еда",
+  "price": 10,
+  "satiety": 85,
+  "duration": 25000,
+  "quality": 1,
+  "kitchen": true
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Обед столовая",
+  "price": 5,
+  "satiety": 45,
+  "duration": 17000,
+  "quality": 0.5,
+  "kitchen": false
+}

@@ -6,6 +6,7 @@ import log from './helpers/log';
 import random from './helpers/random';
 import renderPage from './common/render-page';
 import locations from './init/locations';
+import foods from './init/foods';
 
 let person = new Character();
 
@@ -14,7 +15,9 @@ global.person = person;
 // init
 $(document).ready(() => {
 
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover'
+    });
 
     renderPage(person);
 
@@ -24,6 +27,14 @@ $(document).ready(() => {
         if (person.applyLocation(locations[name])) {
             $('.btn-location.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
             $(this).removeClass('btn-primary').addClass('btn-success').attr('disabled', 'disabled');
+        }
+    });
+
+    // apply eat
+    $('.btn-eat').on('click', function (){
+        let name = $(this).data('food');
+        if (person.eatFood(foods[name])) {
+            alert('FOOOOD');
         }
     });
 

@@ -1,0 +1,8 @@
+{
+  "name": "Пиво",
+  "price": 20,
+  "satiety": 65,
+  "duration": 16000,
+  "quality": 0.8,
+  "kitchen": false
+}

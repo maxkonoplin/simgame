@@ -1,0 +1,8 @@
+{
+  "name": "Ресторна",
+  "price": 45,
+  "satiety": 100,
+  "duration": 12000,
+  "quality": 1,
+  "kitchen": false
+}
