@@ -6,6 +6,7 @@ import beer from '../../../config/food/beer.json';
 import lunchRiga from '../../../config/food/lunch-riga.json';
 import steak from '../../../config/food/steak.json';
 import restaurant from '../../../config/food/restaurant.json';
+import cook from '../../../config/food/cook.json';
 
 export default {
     trashcan: new Food(trashcan),
@@ -14,5 +15,6 @@ export default {
     beer: new Food(beer),
     lunchRiga: new Food(lunchRiga),
     steak: new Food(steak),
-    restaurant: new Food(restaurant)
+    restaurant: new Food(restaurant),
+    cook: new Food(cook)
 };

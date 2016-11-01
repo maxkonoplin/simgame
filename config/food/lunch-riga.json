@@ -1,7 +1,7 @@
 {
   "name": "Обед Рига",
   "price": 25,
-  "satiety": 70,
+  "satiety": 0.7,
   "duration": 12000,
   "quality": 0.9,
   "kitchen": false

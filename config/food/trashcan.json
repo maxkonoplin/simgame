@@ -1,7 +1,7 @@
 {
   "name": "Объедки",
   "price": 0,
-  "satiety": 40,
+  "satiety": 0.4,
   "duration": 20000,
   "quality": 0.3,
   "kitchen": false,

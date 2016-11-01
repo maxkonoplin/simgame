@@ -13,6 +13,7 @@ export default class Character extends events.EventEmitter {
         this.health = 1;
         this.hunger = 0;
         this.location = null;
+        this.inventory = null;
         this.start = Date.now();
         this.hungerPerTime = 0.01;
         setInterval(() => {
@@ -61,8 +62,24 @@ export default class Character extends events.EventEmitter {
             this.emit('notEnoughMoneyForFood');
             return false;
         }
-        this.cash -= food.price;
-        this.hunger += food.satiety;
+        if(food.kitchen == true) {
+            if(this.location == null && this.location.kitchen == false) {
+                this.emit('notEnoughKitchen');
+                return false;
+            }
+        }
+        if(this.hunger <= food.satiety) {
+            this.cash -= food.price;
+            this.hunger = 0;
+            this.emit('personHadEaten');
+            return true;
+        }
+        else {
+            this.cash -= food.price;
+            this.hunger -= food.satiety;
+            this.emit('personLittleHungry');
+            return true;
+        }
     }
     applyWorkplace(workplace){
 
