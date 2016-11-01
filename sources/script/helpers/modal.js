@@ -16,9 +16,9 @@ export default function modalDuration(message, title, duration) {
     });
     modalTitle.text(title);
     modalContent.text(message);
-    $.when(progressBar.animate({
+    progressBar.animate({
         width: '100%'
-    }, duration).done(function() {
+    }, duration, function() {
         modalHide();
-    }));
+    });
 };
