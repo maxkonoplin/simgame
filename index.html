@@ -30,6 +30,9 @@
                     <li role="presentation">
                         <a href="#home-tab" aria-controls="home-tab" role="tab" data-toggle="tab">Жилье</a>
                     </li>
+                    <li role="presentation">
+                        <a href="#comp-tab" aria-controls="comp-tab" role="tab" data-toggle="tab" style="display: none">Компьютер</a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="info-tab">
@@ -261,7 +264,7 @@
                     <p class="bg-info">Ярик вышел из аеропорта и вздохнул свежий Канадский воздух. В кармане денег нет,
                     остановится негде, у него есть только четкое понимание того, что он сможет добиться успеха тут!</p>
                 </div>
-                <audio id="audio" controls loop autoplay preload="metadata" >
+                <audio id="audio" controls loop preload="metadata" >
                     <source src="sources/music/music.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
@@ -272,11 +275,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Ярик трудится</h4>
+                    <h4 class="modal-title">Ярик трудится</h4>
                 </div>
                 <div class="modal-body">
                     <blockquote>
-                        <p id="modal-proverbs"></p>
+                        <p class="modal-message"></p>
                         <footer>Ярик</footer>
                     </blockquote>
                 </div>

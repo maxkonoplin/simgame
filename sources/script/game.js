@@ -3,6 +3,7 @@ import 'bootstrap';
 
 import Character from './class/character';
 import log from './helpers/log';
+import modalDuration from './helpers/modal';
 import random from './helpers/random';
 import renderPage from './common/render-page';
 import locations from './init/locations';
@@ -34,7 +35,7 @@ $(document).ready(() => {
     $('.btn-eat').on('click', function (){
         let name = $(this).data('food');
         if (person.eatFood(foods[name])) {
-            alert('FOOOOD');
+            modalDuration("text", "Ярик кушает", 2000)
         }
     });
 
