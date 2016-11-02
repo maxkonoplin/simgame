@@ -17,42 +17,54 @@
                     местным селебрети или умрет замерзнув в холодном переулке. Все зависит только от тебя!</p>
             </div>
             <div class="col-md-8">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#info-tab" aria-controls="info-tab" role="tab" data-toggle="tab">Информация</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#eat-tab" aria-controls="eat-tab" role="tab" data-toggle="tab">Питание</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#job-tab" aria-controls="job-tab" role="tab" data-toggle="tab">Работа</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#home-tab" aria-controls="home-tab" role="tab" data-toggle="tab">Жилье</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#comp-tab" aria-controls="comp-tab" role="tab" data-toggle="tab" style="display: none">Компьютер</a>
-                    </li>
-                </ul>
+
+                <div class="header-well well well-sm">
+                    <div class="media">
+                        <a class="header-thumbnail thumbnail pull-left" href="#">
+                            <img class="media-object" src="/dist/img/user.jpeg">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><span id="name"></span>, <span id="age"></span> лет</h4>
+                            <p>
+                                <span class="header-label label label-danger">Здоровье: <span id="health">100</span> %</span>
+                                <span class="header-label label label-warning">Голод: <span id="hunger">0</span> %</span>
+                                <span class="header-label label label-success">Деньги: <span id="money">5</span> $</span>
+                                <span class="header-label label label-info">Интелект: <span id="iq">85</span> IQ</span>
+                            </p>
+                            <p class="no_margin">
+                                <a href="#info-tab" class="btn btn-md btn-default" aria-controls="info-tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                                    Информация</a>
+                                <a href="#eat-tab" class="btn btn-md btn-default" aria-controls="eat-tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    Питание</a>
+                                <a href="#job-tab" class="btn btn-md btn-default" aria-controls="job-tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    Работа</a>
+                                <a href="#home-tab" class="btn btn-md btn-default" aria-controls="home-tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    Жилье</a>
+                                <a href="#city-tab" class="btn btn-md btn-default" aria-controls="city-tab" role="tab" data-toggle="tab">
+                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                    Город</a>
+                                <a href="#comp-tab" class="btn btn-md btn-default" aria-controls="comp-tab" role="tab" data-toggle="tab" style="display: none">
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                    Компьютер</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="info-tab">
-                        <h3>Информация о персонаже</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Информация о персонаже</h3>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-7">
                                 <table class="table table-hover">
                                     <tbody>
-                                    <tr>
-                                        <td>Имя</td>
-                                        <td><strong id="name"></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Возраст:</td>
-                                        <td><strong id="age"></strong> лет</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Деньги:</td>
-                                        <td><strong id="money">5</strong> $</td>
-                                    </tr>
                                     <tr>
                                         <td>Место работы:</td>
                                         <td><strong id="job">Безработный</strong></td>
@@ -60,18 +72,6 @@
                                     <tr>
                                         <td>Доход:</td>
                                         <td><strong id="income">0</strong> $ в день</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IQ:</td>
-                                        <td><strong id="iq">85</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Здоровье</td>
-                                        <td><strong id="health">100</strong> %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Голод:</td>
-                                        <td><strong id="hunger">0</strong> %</td>
                                     </tr>
                                     <tr>
                                         <td>Место жительства:</td>
@@ -218,25 +218,25 @@
                                 <div class="row">
                                     <div class="col-md-7">
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="tent">
+                                                data-location="tent">
                                             Палатка за городом</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="abandonedHouse">
+                                                data-location="abandonedHouse">
                                             Заброшенный дом</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="trailer">
+                                                data-location="trailer">
                                             Аренда трейлера</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="rentRoom">
+                                                data-location="rentRoom">
                                             Cъемная комната в гетто</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="apartment">
+                                                data-location="apartment">
                                             Двухкомнтная квартира</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="penthouse">
+                                                data-location="penthouse">
                                             Пентхаус в центре</button>
                                         <button class="btn btn-primary btn-block btn-location"
-                                            data-location="villa">
+                                                data-location="villa">
                                             Вилла с видом на океан</button>
                                     </div>
                                 </div>
@@ -251,6 +251,30 @@
                                             Документы</button>
                                         <button class="btn btn-info btn-block">
                                             Компьютер</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="city-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Развлечения</h3>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <button class="btn btn-primary btn-block">
+                                            Отдых</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="text-right">Учереждения</h3>
+                                <div class="row">
+                                    <div class="col-md-7 col-md-offset-5">
+                                        <button class="btn btn-danger btn-block">
+                                            Посетить клинику</button>
+                                        <button class="btn btn-danger btn-block">
+                                            Взятка полиции</button>
                                     </div>
                                 </div>
                             </div>

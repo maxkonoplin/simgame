@@ -10,6 +10,7 @@ export default class Character extends events.EventEmitter {
         this.cash = 5;
         this.workplace = null;
         this.IQ = 85;
+        this.happiness = 1;
         this.health = 1;
         this.hunger = 0;
         this.location = null;

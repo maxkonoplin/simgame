@@ -4,6 +4,7 @@
   "satiety": 0.4,
   "duration": 20000,
   "quality": 0.3,
+  "delicious": -0.03,
   "kitchen": false,
   "replica": [
     "Ura ia siel obiedki!",

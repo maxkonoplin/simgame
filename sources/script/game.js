@@ -35,7 +35,7 @@ $(document).ready(() => {
     $('.btn-eat').on('click', function (){
         let name = $(this).data('food');
         if (person.eatFood(foods[name])) {
-            modalDuration(random.index(foods[name].replica), "Ярик кушает", foods[name].duration);
+            modalDuration(random.index(foods[name].replica), foods[name].name, foods[name].duration);
         }
     });
 

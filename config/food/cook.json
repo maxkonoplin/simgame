@@ -4,5 +4,6 @@
   "satiety": 0.9,
   "duration": 25000,
   "quality": 1,
+  "delicious": 0.03,
   "kitchen": true
 }
