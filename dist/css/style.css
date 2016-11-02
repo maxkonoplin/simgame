@@ -20,6 +20,10 @@
     padding: .3em .6em;
 }
 
+.btn-config {
+	outline: none !important;
+}
+
 /* logs */
 #block-logs {
     height: 350px;
