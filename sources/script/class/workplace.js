@@ -1,12 +1,13 @@
 import events from 'events';
 
 export default class Workplace extends events.EventEmitter {
-    constructor({name, IQ, incomeCash, incomeIQ}){
+    constructor(requirements =[]){
         super();
         this.name = name;
-        this.IQ = IQ;
         this.incomeCash = incomeCash;
         this.incomeIQ = incomeIQ;
+        this.satiety = satiety;
+        this.requirements = requirements;
         return this;
     }
 }

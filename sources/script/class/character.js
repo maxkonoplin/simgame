@@ -20,7 +20,7 @@ export default class Character extends events.EventEmitter {
         setInterval(() => {
             if(this.hunger >= 0.6){
                 if(this.hunger >= 0.8){
-                    if(this.hunger >= 1){
+                    if(this.hunger + (this.hungerPerTime * 2) >= 1){
                         if(this.cash > 3){
                             let lost = Math.floor(this.cash * 0.4);
                             this.cash -= lost;
@@ -44,6 +44,7 @@ export default class Character extends events.EventEmitter {
                 else {
                     this.hunger += (this.hungerPerTime * 1.5);
                     this.health -= 0.002;
+                    this.emit('hunger');
                     this.emit('update');
                 }
             }

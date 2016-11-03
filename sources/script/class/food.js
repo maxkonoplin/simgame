@@ -1,7 +1,7 @@
 import events from 'events';
 
 export default class Food extends events.EventEmitter {
-    constructor({name, price, satiety, duration, quality, delicious, kitchen, replica =[]}){
+    constructor(replica =[]){
         super();
         this.name = name;
         this.price = price;

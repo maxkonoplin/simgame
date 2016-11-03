@@ -1,0 +1,12 @@
+{
+  "name": "Дворник",
+  "incomeCash": 0.3,
+  "incomeIQ": 0,
+  "satiety": 0,
+  "requirements": [
+    "iq": 0,
+    "phone": false,
+    "documents": false,
+    "computer": false
+  ]
+}

@@ -22,6 +22,13 @@ $(document).ready(() => {
 
     renderPage(person);
 
+    // change pages
+    let btnTabs = $('.btn-tab');
+    btnTabs.on('click', function() {
+        btnTabs.removeClass('btn-primary disabled');
+        $(this).addClass('btn-primary disabled');
+    });
+
     // apply location
     $('.btn-location').on('click', function (){
         let name = $(this).data('location');
@@ -41,8 +48,11 @@ $(document).ready(() => {
 
     // logs
     person.on('update', () => renderPage(person));
+
+    person.on('hunger', () => log.warning(`Ярик очень голоден, он начинает терять здоровье!`));
     person.on('faint', (lost) => log.error(`Ярик потерял созание! Проснулся сытым, голова раскалывается, в кармане не хватает ${lost}$!`));
     person.on('rape', () => log.error(`Ярик потерял созание! Проснулся сытым, голова раскалывается, карманы пусты, анал слегка побаливает и кровоточит!`));
+
     person.on('notEnoughMoneyForLocation', () => log.warning(`notEnoughMoneyForLocation`));
     person.on('doesNotLikeLocation', () => log.warning(`doesNotLikeLocation`));
     person.on('notEnoughIncomeForLocation', () => log.warning(`notEnoughIncomeForLocation`));
