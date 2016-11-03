@@ -15,7 +15,7 @@ export default function renderPage(character) {
     range.setTime((Date.now() - character.start) * 3600);
     nameSelector.text(character.name);
     ageSelector.text(character.age);
-    moneySelector.text(character.cash);
+    moneySelector.text((character.cash).toFixed(2));
     workSelector.text((character.workplace) ? character.workplace.name : 'Безработный');
     incomeSelector.text(character.income.incomeCash);
     intellectSelector.text(character.IQ);

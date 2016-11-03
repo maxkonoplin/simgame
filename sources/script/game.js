@@ -81,9 +81,9 @@ $(document).ready(() => {
     person.on('notEnoughtIqForWorkplace', () => log.warning(`Нужно быть намного более умным, что бы занимать эту должность!`));
     person.on('welcomeNewWorkplace', () => log.success(random.index(person.workplace.replica)));
 
-    person.on('notEnoughMoneyForLocation', () => log.warning(`notEnoughMoneyForLocation`));
-    person.on('doesNotLikeLocation', () => log.warning(`doesNotLikeLocation`));
-    person.on('notEnoughIncomeForLocation', () => log.warning(`notEnoughIncomeForLocation`));
+    person.on('notEnoughMoneyForLocation', () => log.warning(`Мне нужно больше денег, что бы выъехать сюда!`));
+    person.on('doesNotLikeLocation', () => log.warning(`Мне больше нравиться мое нынешнее место жительство!`));
+    person.on('notEnoughIncomeForLocation', () => log.warning(`Я не могу себе это позволить! Аренда больше, чем мой доход!`));
     person.on('welcomeNewHome', () => log.success(random.index(person.location.replica)));
 
 });

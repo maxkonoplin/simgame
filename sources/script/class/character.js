@@ -28,40 +28,35 @@ export default class Character extends events.EventEmitter {
             hungerPerTime: 0.01
         };
         setInterval(() => {
-            if(this.hunger >= 0.6){
-                if(this.hunger >= 0.8){
-                    if(this.hunger + (this.income.hungerPerTime * 2) >= 1){
-                        if(this.cash > 3){
-                            let lost = Math.floor(this.cash * 0.4);
-                            this.cash -= lost;
-                            this.health -= 0.01;
-                            this.emit('faint', lost);
-                        }
-                        else {
-                            this.cash = 0;
-                            this.health -= 0.014;
-                            this.emit('rape');
-                        }
-                        this.hunger = 0;
-                        this.emit('update');
-                    }
-                    else {
-                        this.hunger += (this.income.hungerPerTime * 2);
-                        this.health -= 0.03;
-                        this.emit('update');
-                    }
+            let bonusHunger = 0;
+            this.IQ += this.income.incomeIQ;
+            this.cash += this.income.incomeCash;
+            if(this.hunger + this.income.hungerPerTime >= 1) {
+                if(this.cash > 3) {
+                    let lost = Math.floor(this.cash * 0.4);
+                    this.cash -= lost;
+                    this.emit('faint', lost);
+                } else {
+                    this.cash = 0;
+                    this.emit('rape');
                 }
-                else {
-                    this.hunger += (this.income.hungerPerTime * 1.5);
-                    this.health -= 0.002;
-                    this.emit('hunger');
-                    this.emit('update');
-                }
-            }
-            else {
-                this.hunger += this.income.hungerPerTime;
+                this.hunger = 0;
+                this.health -= 0.01;
                 this.emit('update');
+                return false;
             }
+            if(this.hunger >= 0.6) {
+                this.health -= 0.01;
+                this.emit('hunger');
+            }
+            if(this.workplace != null) {
+                bonusHunger += this.workplace.satiety;
+            }
+            if(this.inventory.maid = true) {
+                bonusHunger += 0.003;
+            }
+            this.hunger += this.income.hungerPerTime - bonusHunger;
+            this.emit('update');
         }, 1000);
         return this;
     }
