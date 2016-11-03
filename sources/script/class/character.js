@@ -151,6 +151,9 @@ export default class Character extends events.EventEmitter {
         this.emit('update');
         return true;
     }
+    applyInventory(item){
+
+    }
     heal(health){
 
     }

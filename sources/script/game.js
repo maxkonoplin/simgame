@@ -37,8 +37,8 @@ $(document).ready(() => {
     $('.btn-job').on('click', function (){
         let name = $(this).data('workplace');
         if (person.applyWorkplace(workplace[name])) {
-            $('.btn-job.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
-            $(this).removeClass('btn-primary').addClass('btn-success').attr('disabled', 'disabled');
+            $('.btn-job.btn-success').removeClass('btn-success disabled').addClass('btn-primary');
+            $(this).removeClass('btn-primary').addClass('btn-success disabled');
         }
     });
 
@@ -46,8 +46,16 @@ $(document).ready(() => {
     $('.btn-location').on('click', function (){
         let name = $(this).data('location');
         if (person.applyLocation(locations[name])) {
-            $('.btn-location.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
-            $(this).removeClass('btn-primary').addClass('btn-success').attr('disabled', 'disabled');
+            $('.btn-location.btn-success').removeClass('btn-success disabled').addClass('btn-primary');
+            $(this).removeClass('btn-primary').addClass('btn-success disabled');
+        }
+    });
+
+    // apply inventory
+    $('.btn-buy').on('click', function (){
+        let name = $(this).data('item');
+        if (person.applyInventory(item[name])) {
+            $(this).addClass('disabled');
         }
     });
 
