@@ -107,6 +107,9 @@ span#chapter:after {
 #block-logs p {
     padding: 5px 10px;
 }
+#block-logs p:last-child {
+    margin-bottom: 0;
+}
 
 /* modal */
 #work-modal {
@@ -140,4 +143,13 @@ span#chapter:after {
 /* tooltip + btn */
 .tooltip+.btn-block {
     margin-top: 5px;
+}
+
+/* buttons */
+.btn {
+    outline: none !important;
+}
+
+.btn.disabled {
+    pointer-events: none;
 }
