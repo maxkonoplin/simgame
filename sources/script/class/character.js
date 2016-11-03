@@ -1,6 +1,7 @@
 import events from 'events';
 import Location from './location';
 import Food from './food';
+import Workplace from './workplace';
 
 export default class Character extends events.EventEmitter {
     constructor(name = 'Ярик', age = 30){
@@ -8,24 +9,28 @@ export default class Character extends events.EventEmitter {
         this.name = name;
         this.age = age;
         this.cash = 5;
-        this.workplace = null;
         this.IQ = 85;
         this.happiness = 1;
         this.health = 1;
         this.hunger = 0;
+        this.start = Date.now();
+        this.workplace = null;
         this.location = null;
         this.inventory = {
-            "phone": false,
-            "documents": false,
-            "computer": false,
-            "maid": false
+            phone: false,
+            documents: false,
+            computer: false,
+            maid: false
         };
-        this.start = Date.now();
-        this.hungerPerTime = 0.01;
+        this.income = {
+            incomeCash: 0,
+            incomeIQ: 0,
+            hungerPerTime: 0.01
+        };
         setInterval(() => {
             if(this.hunger >= 0.6){
                 if(this.hunger >= 0.8){
-                    if(this.hunger + (this.hungerPerTime * 2) >= 1){
+                    if(this.hunger + (this.income.hungerPerTime * 2) >= 1){
                         if(this.cash > 3){
                             let lost = Math.floor(this.cash * 0.4);
                             this.cash -= lost;
@@ -41,20 +46,20 @@ export default class Character extends events.EventEmitter {
                         this.emit('update');
                     }
                     else {
-                        this.hunger += (this.hungerPerTime * 2);
+                        this.hunger += (this.income.hungerPerTime * 2);
                         this.health -= 0.03;
                         this.emit('update');
                     }
                 }
                 else {
-                    this.hunger += (this.hungerPerTime * 1.5);
+                    this.hunger += (this.income.hungerPerTime * 1.5);
                     this.health -= 0.002;
                     this.emit('hunger');
                     this.emit('update');
                 }
             }
             else {
-                this.hunger += this.hungerPerTime;
+                this.hunger += this.income.hungerPerTime;
                 this.emit('update');
             }
         }, 1000);
@@ -101,11 +106,24 @@ export default class Character extends events.EventEmitter {
             this.emit('doesNotLikeWorkplace');
             return false;
         }
-        if(this.inventory.phone == this.workplace.requirements.phone) {
+        if(this.inventory.phone !== true && this.inventory.phone !== workplace.requirements.phone) {
             this.emit('notEnoughtPhoneForWorkplace');
             return false;
         }
-        if(this.inventory.documents == this.workplace.requirements.documents)
+        if(this.inventory.documents !== true && this.inventory.documents !== workplace.requirements.documents) {
+            this.emit('notEnoughtDocsForWorkplace');
+            return false;
+        }
+        if(this.inventory.computer !== true && this.inventory.computer !== workplace.requirements.computer) {
+            this.emit('notEnoughtCompForWorkplace');
+            return false;
+        }
+        if(this.IQ < workplace.requirements.IQ) {
+            this.emit('notEnoughtIqForWorkplace');
+            return false;
+        }
+        this.workplace = workplace;
+        this.income.incomeCash = workplace.incomeCash;
         this.emit('welcomeNewWorkplace');
         this.emit('update');
         return true;

@@ -1,0 +1,16 @@
+{
+  "name": "Директор",
+  "incomeCash": 25,
+  "incomeIQ": 0.04,
+  "priority": 6,
+  "satiety": 0.004,
+  "requirements": {
+    "IQ": 160,
+    "phone": true,
+    "documents": true,
+    "computer": true
+  },
+  "replica": [
+    "Ura ia teperi director!"
+  ]
+}

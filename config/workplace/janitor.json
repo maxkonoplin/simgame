@@ -5,9 +5,12 @@
   "priority": 0,
   "satiety": 0,
   "requirements": {
-    "iq": 0,
+    "IQ": 0,
     "phone": false,
     "documents": false,
     "computer": false
-  }
+  },
+  "replica": [
+    "Ura ia teperi dvornik!"
+  ]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Официант",
+  "incomeCash": 1,
+  "incomeIQ": 0,
+  "priority": 2,
+  "satiety": 0.007,
+  "requirements": {
+    "IQ": 0,
+    "phone": true,
+    "documents": true,
+    "computer": false
+  },
+  "replica": [
+    "Ura ia teperi oficiant!"
+  ]
+}

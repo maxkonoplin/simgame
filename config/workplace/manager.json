@@ -1,0 +1,16 @@
+{
+  "name": "Менеджер",
+  "incomeCash": 2.5,
+  "incomeIQ": 0.01,
+  "priority": 3,
+  "satiety": 0.004,
+  "requirements": {
+    "IQ": 0,
+    "phone": true,
+    "documents": true,
+    "computer": true
+  },
+  "replica": [
+    "Ura ia teperi manager!"
+  ]
+}

@@ -17,7 +17,7 @@ export default function renderPage(character) {
     ageSelector.text(character.age);
     moneySelector.text(character.cash);
     workSelector.text((character.workplace) ? character.workplace.name : 'Безработный');
-    incomeSelector.text(character.income);
+    incomeSelector.text(character.income.incomeCash);
     intellectSelector.text(character.IQ);
     healthSelector.text(Math.floor(character.health * 100));
     hungerSelector.text(Math.floor(character.hunger * 100));

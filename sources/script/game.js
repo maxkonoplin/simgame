@@ -37,7 +37,7 @@ $(document).ready(() => {
     $('.btn-job').on('click', function (){
         let name = $(this).data('workplace');
         if (person.applyWorkplace(workplace[name])) {
-            $('.btn-location.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
+            $('.btn-job.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
             $(this).removeClass('btn-primary').addClass('btn-success').attr('disabled', 'disabled');
         }
     });
@@ -64,7 +64,14 @@ $(document).ready(() => {
 
     person.on('hunger', () => log.warning(`Ярик очень голоден, он начинает терять здоровье!`));
     person.on('faint', (lost) => log.error(`Ярик потерял созание! Проснулся сытым, голова раскалывается, в кармане не хватает ${lost}$!`));
-    person.on('rape', () => log.error(`Ярик потерял созание! Проснулся сытым, голова раскалывается, карманы пусты, анал слегка побаливает и кровоточит!`));
+    person.on('rape', () => log.error(`Ярик потерял созание! Проснулся сытым, голова раскалывается, карманы пусты!`));
+
+    person.on('doesNotLikeWorkplace', () => log.info(`Не хочу, я же работаю на хорошей работе!`));
+    person.on('notEnoughtPhoneForWorkplace', () => log.warning(`Мне нужен хотя бы телефон, что бы устроится на эту работу.`));
+    person.on('notEnoughtDocsForWorkplace', () => log.warning(`Без документов меня сюда не возьмут, а жаль!`));
+    person.on('notEnoughtCompForWorkplace', () => log.warning(`Ножно научится пользоваться компьютером, что бы устроится на эту работу!`));
+    person.on('notEnoughtIqForWorkplace', () => log.warning(`Нужно быть намного более умным, что бы занимать эту должность!`));
+    person.on('welcomeNewWorkplace', () => log.success(random.index(person.workplace.replica)));
 
     person.on('notEnoughMoneyForLocation', () => log.warning(`notEnoughMoneyForLocation`));
     person.on('doesNotLikeLocation', () => log.warning(`doesNotLikeLocation`));
