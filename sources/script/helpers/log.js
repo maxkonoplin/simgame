@@ -1,5 +1,9 @@
+let containerLog = $('#block-logs');
 function log(message, level){
-    $('#block-logs').prepend(`<p class=bg-${level}>${message}</p>`);
+    if(containerLog.find('p').length > 20) {
+        containerLog.find('p:last-child').remove();
+    }
+    containerLog.prepend(`<p class=bg-${level}>${message}</p>`);
 }
 
 export default {
