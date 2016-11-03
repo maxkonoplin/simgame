@@ -2,7 +2,7 @@
   "name": "Объедки",
   "price": 0,
   "satiety": 0.4,
-  "duration": 20000,
+  "duration": 10000,
   "quality": 0.3,
   "delicious": -0.03,
   "kitchen": false,

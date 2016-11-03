@@ -2,7 +2,7 @@
   "name": "Стейк",
   "price": 35,
   "satiety": 0.8,
-  "duration": 10000,
+  "duration": 6000,
   "quality": 0.95,
   "delicious": 0.05,
   "kitchen": false

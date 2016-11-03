@@ -2,7 +2,7 @@
   "name": "Ресторна",
   "price": 45,
   "satiety": 1,
-  "duration": 12000,
+  "duration": 5000,
   "quality": 1,
   "delicious": 0.1,
   "kitchen": false

@@ -1,7 +1,7 @@
 import events from 'events';
 
 export default class Location extends events.EventEmitter {
-    constructor(priority = 0, replica = []){
+    constructor({name, price, rent, comfort, kitchen, electricity, internet, priority = 0, replica = []}){
         super();
         this.name = name;
         this.price = price;

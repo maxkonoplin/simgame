@@ -14,7 +14,12 @@ export default class Character extends events.EventEmitter {
         this.health = 1;
         this.hunger = 0;
         this.location = null;
-        this.inventory = null;
+        this.inventory = {
+            "phone": false,
+            "documents": false,
+            "computer": false,
+            "maid": false
+        };
         this.start = Date.now();
         this.hungerPerTime = 0.01;
         setInterval(() => {
@@ -88,7 +93,22 @@ export default class Character extends events.EventEmitter {
         }
     }
     applyWorkplace(workplace){
-
+        if(!(workplace instanceof Workplace)) {
+            console.log('not workplace');
+            return false;
+        }
+        if(this.workplace !== null && this.workplace.priority > workplace.priority) {
+            this.emit('doesNotLikeWorkplace');
+            return false;
+        }
+        if(this.inventory.phone == this.workplace.requirements.phone) {
+            this.emit('notEnoughtPhoneForWorkplace');
+            return false;
+        }
+        if(this.inventory.documents == this.workplace.requirements.documents)
+        this.emit('welcomeNewWorkplace');
+        this.emit('update');
+        return true;
     }
     applyLocation(location){
         if(!(location instanceof Location)) {

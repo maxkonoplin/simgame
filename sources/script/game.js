@@ -2,12 +2,16 @@ import './common/jquery';
 import 'bootstrap';
 
 import Character from './class/character';
+
 import log from './helpers/log';
 import modalDuration from './helpers/modal';
 import random from './helpers/random';
+
 import renderPage from './common/render-page';
+
 import locations from './init/locations';
 import foods from './init/foods';
+import workplace from './init/workplace';
 
 let person = new Character();
 
@@ -27,6 +31,15 @@ $(document).ready(() => {
     btnTabs.on('click', function() {
         btnTabs.removeClass('btn-primary disabled');
         $(this).addClass('btn-primary disabled');
+    });
+
+    // apply workplace
+    $('.btn-job').on('click', function (){
+        let name = $(this).data('workplace');
+        if (person.applyWorkplace(workplace[name])) {
+            $('.btn-location.btn-success').removeClass('btn-success').addClass('btn-primary').removeAttr('disabled');
+            $(this).removeClass('btn-primary').addClass('btn-success').attr('disabled', 'disabled');
+        }
     });
 
     // apply location
@@ -57,4 +70,5 @@ $(document).ready(() => {
     person.on('doesNotLikeLocation', () => log.warning(`doesNotLikeLocation`));
     person.on('notEnoughIncomeForLocation', () => log.warning(`notEnoughIncomeForLocation`));
     person.on('welcomeNewHome', () => log.success(random.index(person.location.replica)));
+
 });

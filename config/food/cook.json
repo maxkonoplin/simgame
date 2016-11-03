@@ -2,7 +2,7 @@
   "name": "Домашняя еда",
   "price": 10,
   "satiety": 0.9,
-  "duration": 25000,
+  "duration": 8000,
   "quality": 1,
   "delicious": 0.03,
   "kitchen": true

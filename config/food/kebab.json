@@ -2,7 +2,7 @@
   "name": "Кебаб",
   "price": 10,
   "satiety": 55,
-  "duration": 14000,
+  "duration": 4000,
   "quality": 0.6,
   "delicious": 0,
   "kitchen": false

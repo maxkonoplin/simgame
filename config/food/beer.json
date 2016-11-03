@@ -2,7 +2,7 @@
   "name": "Пиво",
   "price": 20,
   "satiety": 0.65,
-  "duration": 16000,
+  "duration": 4000,
   "quality": 0.8,
   "delicious": 0.02,
   "kitchen": false
