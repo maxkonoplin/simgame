@@ -25,12 +25,14 @@ export default class Character extends events.EventEmitter {
         this.income = {
             incomeCash: 0,
             incomeIQ: 0,
-            hungerPerTime: 0.01
+            hungerPerTime: 0.01,
+            unhappinessPerTime: 0.003
         };
         setInterval(() => {
             let bonusHunger = 0;
             this.IQ += this.income.incomeIQ;
             this.cash += this.income.incomeCash;
+            this.happiness -= this.income.unhappinessPerTime;
             if(this.hunger + this.income.hungerPerTime >= 1) {
                 if(this.cash > 3) {
                     let lost = Math.floor(this.cash * 0.4);
@@ -136,10 +138,11 @@ export default class Character extends events.EventEmitter {
             this.emit('doesNotLikeLocation');
             return false;
         }
-        if(this.income < location.rent) {
+        if(this.income.cash < location.rent) {
             this.emit('notEnoughIncomeForLocation');
             return false;
         }
+        this.income.unhappinessPerTime -= (location.comfort / 500);
         this.cash -= location.price;
         this.location = location;
         this.emit('welcomeNewHome');

@@ -62,7 +62,16 @@ $(document).ready(() => {
     // apply eat
     $('.btn-eat').on('click', function (){
         let name = $(this).data('food');
-        if (person.eatFood(foods[name])) {
+        if(name == "trashcan") {
+            modalDuration(random.index(foods[name].replica), foods[name].name, foods[name].duration);
+            if(random.chance(25)) {
+                person.eatFood(foods[name])
+            } else {
+                log.warning(`Увы бог милосердия не посмотрел в сторону Ярика, он остаеться голодным.`);
+            }
+            return false;
+        }
+        if(person.eatFood(foods[name])) {
             modalDuration(random.index(foods[name].replica), foods[name].name, foods[name].duration);
         }
     });

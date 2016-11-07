@@ -8,6 +8,6 @@ export default {
         return array[index];
     },
     chance(prob){
-        return Math.random() < prob;
+        return Math.random() < (prob / 100);
     }
 };
