@@ -75,22 +75,25 @@
                                     </span>
                                 </p>
                                 <p class="no_margin">
-                                    <a href="#info-tab" class="btn btn-md btn-tab btn-default btn-primary disabled" aria-controls="info-tab" role="tab" data-toggle="tab">
+                                    <a href="#info-tab" class="btn btn-sm btn-tab btn-default btn-primary disabled" aria-controls="info-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-id-card" aria-hidden="true"></i>
                                         Инфо</a>
-                                    <a href="#eat-tab" class="btn btn-md btn-tab btn-default" aria-controls="eat-tab" role="tab" data-toggle="tab">
+                                    <a href="#eat-tab" class="btn btn-sm btn-tab btn-default" aria-controls="eat-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-cutlery" aria-hidden="true"></i>
                                         Питание</a>
-                                    <a href="#job-tab" class="btn btn-md btn-tab btn-default" aria-controls="job-tab" role="tab" data-toggle="tab">
+                                    <a href="#job-tab" class="btn btn-sm btn-tab btn-default" aria-controls="job-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                         Работа</a>
-                                    <a href="#home-tab" class="btn btn-md btn-tab btn-default" aria-controls="home-tab" role="tab" data-toggle="tab">
+                                    <a href="#home-tab" class="btn btn-sm btn-tab btn-default" aria-controls="home-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         Жилье</a>
-                                    <a href="#city-tab" class="btn btn-md btn-tab btn-default" aria-controls="city-tab" role="tab" data-toggle="tab">
+                                    <a href="#city-tab" class="btn btn-sm btn-tab btn-default" aria-controls="city-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-building" aria-hidden="true"></i>
                                         Город</a>
-                                    <a href="#comp-tab" class="btn btn-md btn-tab btn-default" aria-controls="comp-tab" role="tab" data-toggle="tab" style="display: none">
+                                    <a href="#business-tab" class="btn btn-sm btn-tab btn-default" aria-controls="business-tab" role="tab" data-toggle="tab">
+                                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                        Бизнесс</a>
+                                    <a href="#comp-tab" class="btn btn-sm btn-tab btn-default" aria-controls="comp-tab" role="tab" data-toggle="tab">
                                         <i class="fa fa-desktop" aria-hidden="true"></i>
                                         Компьютер</a>
                                 </p>
@@ -195,25 +198,25 @@
                                     <div class="row">
                                         <div class="col-md-7">
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="janitor">
+                                                    data-workplace="janitor">
                                                 Дворник</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="laborer">
+                                                    data-workplace="laborer">
                                                 Разнорабочий</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="waiter">
+                                                    data-workplace="waiter">
                                                 Официант</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="manager">
+                                                    data-workplace="manager">
                                                 Менеджер</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="programmer">
+                                                    data-workplace="programmer">
                                                 Программист</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="chief">
+                                                    data-workplace="chief">
                                                 Начальник отдела</button>
                                             <button class="btn btn-primary btn-block btn-job"
-                                                data-workplace="director">
+                                                    data-workplace="director">
                                                 Директор</button>
                                         </div>
                                     </div>
@@ -222,10 +225,14 @@
                                     <h3 class="text-right">Правонарушения</h3>
                                     <div class="row">
                                         <div class="col-md-7 col-md-offset-5">
+                                            <button class="btn btn-link btn-block disabled">
+                                                <p class="no_margin text-right">Авторитет: <span id="respect">0</span></p>
+                                            </button>
+                                            <button class="btn btn-link btn-block disabled">
+                                                <p class="no_margin text-right">Разыскиваемость: <span id="wanted">0</span></p>
+                                            </button>
                                             <button class="btn btn-warning btn-block btn-crime">
                                                 Клянчить мелочь</button>
-                                            <button class="btn btn-warning btn-block btn-crime">
-                                                Расклейка объявлений</button>
                                             <button class="btn btn-warning btn-block btn-crime">
                                                 Гоп стоп</button>
                                             <button class="btn btn-warning btn-block btn-crime">
