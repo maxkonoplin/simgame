@@ -1,0 +1,11 @@
+export { BusinessComponent } from './business/business.component';
+export { CityComponent } from './city/city.component';
+export { ComputerComponent } from './computer/computer.component';
+export { DeadComponent } from './dead/dead.component';
+export { FoodComponent } from './food/food.component';
+export { HouseComponent } from './house/house.component';
+export { StartComponent } from './start/start.component';
+export { WinComponent } from './win/win.component';
+export { WorkComponent } from './work/work.component';
+export { InfoComponent } from './info/info.component';
+export { GameComponent } from './game/game.component';

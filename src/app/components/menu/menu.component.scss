@@ -1,0 +1,18 @@
+:host {
+	.btn-labeled {
+		padding: 0 .3rem;
+	}
+
+	.label-data {
+		display: inline-block;
+		margin: 0 0 0 .3rem;
+		height: 17px;
+		line-height: 17px;
+		padding: 0 .2rem;
+		text-align: center;
+		color: black;
+		font-weight: 600;
+		background: white;
+		border-radius: 4px;
+	}
+}

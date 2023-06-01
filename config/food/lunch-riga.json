@@ -1,9 +1,0 @@
-{
-  "name": "Обед Рига",
-  "price": 25,
-  "satiety": 0.7,
-  "duration": 3000,
-  "quality": 0.9,
-  "delicious": 0.03,
-  "kitchen": false
-}
