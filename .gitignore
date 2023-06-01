@@ -9,3 +9,5 @@ node_modules/
 
 # arhive
 /arhive.zip
+
+.angular/

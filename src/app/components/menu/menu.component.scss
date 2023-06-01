@@ -1,11 +1,18 @@
 :host {
+	.avatar {
+		max-height: 98px;
+    border: 2px solid #221e20;
+    border-radius: 5px;
+	}
+
 	.btn-labeled {
 		padding: 0 .3rem;
 	}
 
 	.label-data {
 		display: inline-block;
-		margin: 0 0 0 .3rem;
+		margin: 0 0 0 .5rem;
+		min-width: 24px;
 		height: 17px;
 		line-height: 17px;
 		padding: 0 .2rem;
@@ -13,6 +20,6 @@
 		color: black;
 		font-weight: 600;
 		background: white;
-		border-radius: 4px;
+		border-radius: 3px;
 	}
 }

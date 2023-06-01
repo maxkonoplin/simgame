@@ -1,90 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { takeUntil } from 'rxjs';
 import { BaseComponent } from 'src/app/classes';
-import { LabelData, MenuBtn } from 'src/app/models';
+import { LABELS, MENU_ITEMS } from 'src/app/constants';
+import { LabelData, MenuBtn, Person } from 'src/app/models';
+import { PersonService } from 'src/app/services';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent extends BaseComponent implements OnInit {
-  public menuItems: MenuBtn[];
-  public labels: LabelData[];
+export class MenuComponent extends BaseComponent{
+  public menuItems: MenuBtn[] = MENU_ITEMS;
+  public labels: LabelData[] = LABELS;
   
-  constructor() {
+  constructor(private readonly personSevice: PersonService) {
     super();
+
+    this.personSevice.currentPerson$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe((person) => {
+      this.updateLabels(person);
+    });
   }
 
-  ngOnInit(): void {
-    this.menuItems = [
-      {
-        name: 'Инфо',
-        icon: 'fas fa-info-circle',
-        link: './info'
-      },
-      {
-        name: 'Питание',
-        icon: 'fas fa-hamburger',
-        link: './food'
-      },
-      {
-        name: 'Работа',
-        icon: 'fas fa-briefcase',
-        link: './work'
-      },
-      {
-        name: 'Жилье',
-        icon: 'fas fa-home',
-        link: './house'
-      },
-      {
-        name: 'Город',
-        icon: 'fas fa-city',
-        link: './city'
-      },
-      {
-        name: 'Бизнесс',
-        icon: 'fas fa-landmark',
-        link: './business'
-      },
-      {
-        name: 'Компьютер',
-        icon: 'fas fa-laptop',
-        link: './computer'
-      }
-    ];
+  private updateLabels(person: Person): void {
+    const [health, hunger, money, happines, intellect, income] = this.labels;
 
-    this.labels = [
-      {
-        icon: 'fas fa-heart',
-        class: 'btn-danger',
-        data: 0
-      },
-      {
-        icon: 'fas fa-utensils',
-        class: 'btn-warning',
-        data: 0
-      },
-      {
-        icon: 'fas fa-dollar-sign',
-        class: 'btn-success',
-        data: 0
-      },
-      {
-        icon: 'fas fa-laugh-beam',
-        class: 'btn-info',
-        data: 0
-      },
-      {
-        icon: 'fas fa-book',
-        class: 'btn-primary',
-        data: 0
-      },
-      {
-        icon: 'fas fa-piggy-bank',
-        class: 'btn-secondary',
-        data: 0
-      }
-    ];
+    health.data = person.characteristic.health;
+    hunger.data = Math.round(person.characteristic.hunger);
+    happines.data = person.characteristic.happines;
+    intellect.data = person.characteristic.intellect;
   }
 }

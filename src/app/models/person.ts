@@ -2,16 +2,15 @@ import { Job } from "./job";
 
 export interface Person {
 	name: string;
-	birthday: string;
+	birthday: Date;
 	characteristic: Characteristic;
 
-	position: Job;
+	position: Job | null;
 }
 
 export interface Characteristic {
 	health: number;
 	hunger: number;
-	money: number;
 	happines: number;
 	intellect: number;
 }

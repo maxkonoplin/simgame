@@ -2,8 +2,24 @@
 
 :root {
   --main-bg-color: #606988;
+
+	--replace-primary: #337ab7;
+	--replace-primary-darken: #2d6ea6;
+	--replace-primary-darken-lg: #296498;
+	--replace-primary-darken-xl: #255b8b;
 }
 
 body {
 	background: var(--main-bg-color);
+}
+
+.btn-primary {
+	--bs-btn-bg: var(--replace-primary);
+	--bs-btn-border-color: var(--replace-primary);
+	--bs-btn-disabled-bg: var(--replace-primary);
+	--bs-btn-disabled-border-color: var(--replace-primary);
+	--bs-btn-hover-bg: var(--replace-primary-darken);
+	--bs-btn-hover-border-color: var(--replace-primary-darken-lg);
+	--bs-btn-active-bg: var(--replace-primary-darken-lg);
+	--bs-btn-active-border-color: var(--replace-primary-darken-xl);
 }

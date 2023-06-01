@@ -1,0 +1,1 @@
+export { LABELS, MENU_ITEMS } from './menu';
