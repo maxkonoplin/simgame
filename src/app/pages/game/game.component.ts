@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { interval, takeUntil } from 'rxjs';
 import { BaseComponent } from 'src/app/classes';
 import { PersonService } from 'src/app/services';
@@ -8,9 +8,12 @@ import { PersonService } from 'src/app/services';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent extends BaseComponent implements OnInit {
+export class GameComponent extends BaseComponent implements OnInit, AfterViewInit {
+  @ViewChild('audioEl') audioChildren: ElementRef<HTMLAudioElement>;
+
   constructor(private readonly personService: PersonService) {
     super();
+
   }
 
   ngOnInit(): void {
@@ -19,5 +22,9 @@ export class GameComponent extends BaseComponent implements OnInit {
     ).subscribe(() => {
       this.personService.intervalChanges();
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.audioChildren.nativeElement.volume = 0.05;
   }
 }
