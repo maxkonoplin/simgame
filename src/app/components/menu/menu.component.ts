@@ -4,6 +4,8 @@ import { BaseComponent } from 'src/app/classes';
 import { LABELS, MENU_ITEMS } from 'src/app/constants';
 import { LabelData, MenuBtn, Person } from 'src/app/models';
 import { PersonService } from 'src/app/services';
+import { Interval } from 'luxon';
+import * as humanizeDuration from 'humanize-duration';
 
 @Component({
   selector: 'app-menu',
@@ -13,6 +15,7 @@ import { PersonService } from 'src/app/services';
 export class MenuComponent extends BaseComponent{
   public menuItems: MenuBtn[] = MENU_ITEMS;
   public labels: LabelData[] = LABELS;
+  public ages: string = ''
   
   constructor(private readonly personSevice: PersonService) {
     super();
@@ -21,7 +24,20 @@ export class MenuComponent extends BaseComponent{
       takeUntil(this.destroy$)
     ).subscribe((person) => {
       this.updateLabels(person);
+      this.updateAges(person);
     });
+  }
+
+  private updateAges(person: Person): void {
+    const birthdayDate = person.birthday;
+    const birthdayInSeconds = birthdayDate.getTime() / 1000;
+    const nowSeconds = new Date().getTime() / 1000;
+    const differenceSeconds = nowSeconds - birthdayInSeconds;
+    const nowDate = new Date(birthdayDate.getTime() + (differenceSeconds * 1000))
+
+    const timeInterval = Interval.fromDateTimes(birthdayDate, nowDate).toDuration().valueOf();
+
+    this.ages = humanizeDuration(timeInterval, {largest: 1 });
   }
 
   private updateLabels(person: Person): void {

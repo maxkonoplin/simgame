@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, takeUntil } from 'rxjs';
+import { interval, takeUntil } from 'rxjs';
 import { Person } from 'src/app/models';
 import { PersonService } from 'src/app/services';
 import { BaseComponent } from 'src/app/classes';
-import { Interval, Duration } from 'luxon';
+import { Interval } from 'luxon';
 import * as humanizeDuration from 'humanize-duration';
 
 @Component({
@@ -35,13 +35,13 @@ export class InfoComponent extends BaseComponent implements OnInit {
   }
 
   private updateLivingTime(): void {
-    const birthday = this.person.birthday;
-    const birthdayInSeconds = birthday.getTime() / 1000;
+    const relocationDate = this.person.dateOfRelocationToCanada;
+    const relocationInSeconds = relocationDate.getTime() / 1000;
     const nowSeconds = new Date().getTime() / 1000;
-    const differenceSeconds = Math.round(nowSeconds - birthdayInSeconds) / 5;
-    const nowDate = new Date(birthday.getTime() + (differenceSeconds * 1000 * 60 * 60))
+    const differenceSeconds = Math.round(nowSeconds - relocationInSeconds) / 5;
+    const nowDate = new Date(relocationDate.getTime() + (differenceSeconds * 1000 * 60 * 60))
 
-    const timeInterval = Interval.fromDateTimes(birthday, nowDate).toDuration().valueOf();
+    const timeInterval = Interval.fromDateTimes(relocationDate, nowDate).toDuration().valueOf();
 
     this.livingTime = humanizeDuration(timeInterval, {largest: 2 });
   }

@@ -3,6 +3,7 @@ import { Job } from "./job";
 export interface Person {
 	name: string;
 	birthday: Date;
+	dateOfRelocationToCanada: Date;
 	characteristic: Characteristic;
 
 	position: Job | null;

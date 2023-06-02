@@ -22,4 +22,26 @@
 		background: white;
 		border-radius: 3px;
 	}
+
+	.btn-primary {
+		--bs-btn-bg: var(--replace-primary);
+		--bs-btn-border-color: var(--replace-primary);
+		--bs-btn-disabled-bg: var(--replace-primary);
+		--bs-btn-disabled-border-color: var(--replace-primary);
+		--bs-btn-hover-bg: var(--replace-primary-darken);
+		--bs-btn-hover-border-color: var(--replace-primary-darken-lg);
+		--bs-btn-active-bg: var(--replace-primary-darken-lg);
+		--bs-btn-active-border-color: var(--replace-primary-darken-xl);
+	}
+
+	.btn-success {
+		--bs-btn-bg: var(--replace-success);
+		--bs-btn-border-color: var(--replace-success);
+		--bs-btn-disabled-bg: var(--replace-success);
+		--bs-btn-disabled-border-color: var(--replace-success);
+		--bs-btn-hover-bg: var(--replace-success-darken);
+		--bs-btn-hover-border-color: var(--replace-success-darken-lg);
+		--bs-btn-active-bg: var(--replace-success-darken-lg);
+		--bs-btn-active-border-color: var(--replace-success-darken-xl);
+	}
 }

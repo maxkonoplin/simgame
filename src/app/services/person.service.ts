@@ -11,7 +11,8 @@ export class PersonService {
   constructor() {
     this.currentPerson = new BehaviorSubject({
       name: '',
-      birthday: new Date(),
+      birthday: new Date(new Date().setFullYear(new Date().getFullYear() - 30.4)),
+      dateOfRelocationToCanada: new Date(),
       characteristic: {
         health: 100,
         hunger: 0,

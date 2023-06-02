@@ -7,19 +7,13 @@
 	--replace-primary-darken: #2d6ea6;
 	--replace-primary-darken-lg: #296498;
 	--replace-primary-darken-xl: #255b8b;
+
+	--replace-success: #5cb85c;
+	--replace-success-darken: #55ac55;
+	--replace-success-darken-lg: #4e9f4e;
+	--replace-success-darken-xl: #468f46;
 }
 
 body {
 	background: var(--main-bg-color);
-}
-
-.btn-primary {
-	--bs-btn-bg: var(--replace-primary);
-	--bs-btn-border-color: var(--replace-primary);
-	--bs-btn-disabled-bg: var(--replace-primary);
-	--bs-btn-disabled-border-color: var(--replace-primary);
-	--bs-btn-hover-bg: var(--replace-primary-darken);
-	--bs-btn-hover-border-color: var(--replace-primary-darken-lg);
-	--bs-btn-active-bg: var(--replace-primary-darken-lg);
-	--bs-btn-active-border-color: var(--replace-primary-darken-xl);
 }
