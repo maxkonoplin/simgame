@@ -19,7 +19,14 @@ export class PersonService {
         happines: 100,
         intellect: 85
       },
-      position: null
+      position: null,
+      home: null,
+      statistic: {
+        readBooks: 0,
+        earnedMoney: 0,
+        wriptedVirus: 0,
+        writedProgramm: 0
+      }
     } as Person);
   }
 

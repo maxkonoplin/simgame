@@ -4,27 +4,27 @@
   <tbody>
     <tr>
       <td>Место работы:</td>
-      <td>@mdo</td>
+      <td>{{ person.position?.name ?? 'Безработный' }}</td>
     </tr>
     <tr>
       <td>Место жительства:</td>
-      <td>@mdo</td>
+      <td>{{ person.home?.name ?? 'Бездомный' }}</td>
     </tr>
     <tr>
       <td>Заработанно денег:</td>
-      <td>@mdo</td>
+      <td>{{ person.statistic.earnedMoney | currency }}</td>
     </tr>
     <tr>
       <td>Прочтено книг:</td>
-      <td>@mdo</td>
+      <td>{{ person.statistic.readBooks }}</td>
     </tr>
     <tr>
       <td>Написанно программ:</td>
-      <td>@mdo</td>
+      <td>{{ person.statistic.writedProgramm }}</td>
     </tr>
     <tr>
       <td>Написанно вирусов:</td>
-      <td>@mdo</td>
+      <td>{{ person.statistic.wriptedVirus }}</td>
     </tr>
     <tr>
       <td>Время жизни в Канаде:</td>
